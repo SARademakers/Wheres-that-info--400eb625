@@ -18,36 +18,3 @@ INSERT INTO `series` (`title`, `rating`, `description`, `has_won_awards`, `seaso
     ('Penoza', 3.2, 'Hoofdrolspeelster Carmen van Walraven (Monic Hendrickx) ontdekt dat haar man Frans (Thomas Acda) een veel belangrijker rol in de onderwereld speelt dan ze dacht. Ze dwingt hem dan ook ermee te stoppen. Net wanneer alles weer goed lijkt te gaan, wordt haar man voor de ogen van hun jongste zoon Boris (Stijn Taverne) geliquideerd. Carmen krijgt last van schuldeisers en bedreigingen. Ook justitie zit achter haar aan omdat die wil dat zij gaat getuigen tegen de compagnons van haar man.Carmen wil niet als beschermd getuige door het leven gaan en kiest voor een moeilijk alternatief: ze werkt zich naar de top van de georganiseerde misdaad, waar niemand nog aan haar of haar gezin durft te komen. In het vervolg daarop weet ze al snel niet meer wie ze moet vertrouwen, en worden de grenzen tussen goed en kwaad steeds onduidelijker.', 0, 3, 'NL', 'NL'),
     ('De luizenmoeder', 4.8, 'Het verhaal speelt zich af op de fictieve basisschool De Klimop in Dokkum. De school heeft een zwaar jaar achter de rug, waarin enkele leraren en de conciërge ontslagen zijn. Het is nu aan de schoolleiding om in het nieuwe schooljaar een frisse start te maken. Centraal staan Hannah (Jennifer Hoffman), de moeder van Floor, de \'luizenmoeder\', en juf Ank (Ilse Warringa), de kordate onderwijzeres. Als moeder van een nieuwe leerling moet Hannah zich staande houden in een absurdistische wereld van hangouders, moedermaffia, schoolpleinregels, rigide verjaardagsprotocollen, verantwoorde traktaties, parkeerbeleid, appgroepjes, ouderparticipatie en ander leed. Ook worden de belevenissen van de andere ouders en de schoolleiding gevolgd. De ouders (moeders) worden geacht het onderwijs te ondersteunen als vrijwilligers en de onderste tree in de bijbehorende hiërarchie die tot de ouderraad loopt is die van luizenmoeder, de moeder die schoolkinderen met een luizenkam controleert op luizen in het haar en deze verwijdert.', 1, 2, 'NL', 'NL'),
     ('My little pony', 1, 'De serie begint met een eenhoorn genaamd Twilight Sparkle, een student van Equestria\'s heerser, prinses Celestia. Nadat ze ziet hoe haar student zich alleen maar bezighoudt met boeken, stuurt prinses Celestia haar naar Ponyville met de opdracht een paar vrienden te maken. Twilight Sparkle, samen met haar assistent, een babydraak genaamd Spike, raakt bevriend met de pony\'s Pinkie Pie, Applejack, Rainbow Dash, Rarity en Fluttershy. Samen beleven ze avonturen binnen en buiten de stad en lossen ze diverse problemen op. De meeste afleveringen eindigen met Twilight Sparkle of iemand anders die een brief schrijft aan de prinses over wat ze die aflevering geleerd heeft over de magie van de vriendschap. Ook zit er in iedere aflevering een belangrijke les over vriendschap.', 0, 25, 'UK', 'NL');
-
--- 1. Welke series hebben een award hebben gewonnen?    
-SELECT has_won_awards
-FROM series
-WHERE has_won_awards = 1;
--- 2. Welke series hebben een cijfer boven de 2.5?
-SELECT rating
-FROM series
-WHERE rating >= 2.5;
--- 3. Welke series zijn in Nederland gemaakt én zijn Nederlands gesproken?
-SELECT country and (language) 
-FROM series
-WHERE country = 'NL' and language = 'nl';
--- 4. Welke series hebben minder dan 5 seizoenen?
-SELECT seasons
-FROM series
-WHERE seasons <= 5;
--- 5. Wat is het hoogste cijfer dat een serie heeft?
-SELECT rating
-FROM series
-WHERE rating = 5.0;
--- 6. Welke series hebben minder dan 3 seizoenen of meer dan 20?
-SELECT seasons
-FROM series
-WHERE seasons <= 2 or seasons >=20;
--- 7. Welke series hebben de lettercombinatie 'Th' in hun title?
-SELECT title
-FROM series
-WHERE title = 'th';
--- 8. Welke series **niet** 3 seizoenen hebben?
-SELECT seasons
-FROM series
-WHERE seasons != 3;
